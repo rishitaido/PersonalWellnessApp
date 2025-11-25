@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Data - Health Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">🏋️ Health Tracker</div>
+        <div class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="data.html" class="active">My Data</a>
+            <a href="import-data.html">Import</a>
+            <a href="#" id="logout-btn">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>My Health Data</h1>
+        <p class="page-description">View and manage your health entries</p>
+
+        <!-- Filters -->
+        <div class="filters">
+            <input type="date" id="start-date" placeholder="Start Date">
+            <input type="date" id="end-date" placeholder="End Date">
+            <button onclick="filterData()" class="btn-secondary">Filter</button>
+            <button onclick="clearFilters()" class="btn-secondary">Clear</button>
+        </div>
+
+        <!-- Summary Stats -->
+        <div class="data-summary">
+            <div class="summary-item">
+                <span>Total Entries:</span>
+                <strong id="total-entries">--</strong>
+            </div>
+            <div class="summary-item">
+                <span>Date Range:</span>
+                <strong id="date-range">--</strong>
+            </div>
+            <div class="summary-item">
+                <span>Avg Calories:</span>
+                <strong id="summary-calories">--</strong>
+            </div>
+            <div class="summary-item">
+                <span>Avg Sleep:</span>
+                <strong id="summary-sleep">--</strong>
+            </div>
+        </div>
+
+        <!-- Data Table -->
+        <div class="table-container">
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Weight (lbs)</th>
+                        <th>Calories</th>
+                        <th>Sleep (hrs)</th>
+                        <th>Exercise (min)</th>
+                        <th>Source</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="data-tbody">
+                    <tr>
+                        <td colspan="7" style="text-align: center;">Loading...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="pagination" class="pagination"></div>
+    </div>
+
+    <script src="js/data.js"></script>
+</body>
+
+</html>

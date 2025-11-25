@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import Data - Health Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html" style="text-decoration: none; color: #667eea;">🏋️ Health Tracker</a>
+        </div>
+        <div class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="data.html">My Data</a>
+            <a href="import-data.html" class="active">Import</a>
+            <a href="#" id="logout-btn">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Import Your Health Data</h1>
+        <p class="page-description">Upload your historical data to get started with personalized insights</p>
+
+        <!-- Import Status -->
+        <div class="status-card">
+            <h3>📊 Current Data Status</h3>
+            <div id="import-status">Loading...</div>
+        </div>
+
+        <!-- CSV Import Section -->
+        <section class="import-section">
+            <h2>🍎 Import Food/Calorie Data (CSV)</h2>
+            <p>Select all your monthly CSV files from your food tracking app</p>
+            <p class="help-text">💡 <strong>Tip:</strong> You can select multiple files at once - hold Ctrl (Windows) or
+                Cmd (Mac) while clicking</p>
+
+            <form id="csv-import-form">
+                <input type="file" id="csv-files" name="files" accept=".csv" multiple required>
+                <button type="submit" class="btn-primary">Import CSV Files</button>
+            </form>
+            <div id="csv-status" class="status-message"></div>
+        </section>
+
+        <!-- Apple Health XML Import -->
+        <section class="import-section">
+            <h2>⌚ Import Apple Health Data (XML)</h2>
+            <p>Upload your export.xml file from Apple Health</p>
+            <p class="help-text">💡 <strong>How to export:</strong> Health app → Profile (top right) → Export All Health
+                Data</p>
+
+            <form id="xml-import-form">
+                <input type="file" id="xml-file" name="file" accept=".xml" required>
+                <button type="submit" class="btn-primary">Import Apple Health XML</button>
+            </form>
+            <div id="xml-status" class="status-message"></div>
+        </section>
+
+        <!-- Manual Entry Section -->
+        <section class="import-section">
+            <h2>✍️ Add Manual Entry</h2>
+            <p>Quickly log today's data</p>
+
+            <form id="manual-entry-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="entry-date">Date *</label>
+                        <input type="date" id="entry-date" name="entry-date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="weight">Weight (lbs)</label>
+                        <input type="number" id="weight" name="weight" step="0.1" min="0">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="calories">Calories</label>
+                        <input type="number" id="calories" name="calories" min="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sleep">Sleep (hours)</label>
+                        <input type="number" id="sleep" name="sleep" step="0.1" min="0" max="24">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="exercise">Exercise (minutes)</label>
+                        <input type="number" id="exercise" name="exercise" min="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exercise-type">Exercise Type</label>
+                        <input type="text" id="exercise-type" name="exercise-type" placeholder="e.g., Running, Gym">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Notes</label>
+                    <textarea id="notes" name="notes" rows="3" placeholder="How did you feel today?"></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary">Add Entry</button>
+            </form>
+            <div id="manual-status" class="status-message"></div>
+        </section>
+
+        <div class="action-buttons">
+            <a href="dashboard.html" class="btn-secondary">← Back to Dashboard</a>
+            <a href="data.html" class="btn-secondary">View My Data →</a>
+        </div>
+    </div>
+
+    <script src="js/import.js"></script>
+</body>
+
+</html>
