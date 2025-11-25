@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Wellness Tracker - Your Health Journey Starts Here</title>
+    <meta name="description"
+        content="Track your wellness journey with our comprehensive health and fitness tracking application. Monitor weight, exercise, sleep, and more.">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+            transform: translateY(-3px);
+        }
+
+        .features {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #667eea;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section - UPDATED -->
+    <section class="hero">
+        <h1>🏋️ Personal Wellness Tracker</h1>
+        <p>Your comprehensive health and fitness journey starts here</p>
+        <div class="hero-buttons">
+            <a href="login.html" class="btn btn-primary">Login</a>
+            <a href="signup.html" class="btn btn-secondary">Create Account</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>Track Everything That Matters</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚖️</div>
+                <h3>Weight Tracking</h3>
+                <p>Monitor your weight loss or gain progress with detailed charts and analytics</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🏃</div>
+                <h3>Exercise Log</h3>
+                <p>Track your workouts, exercise minutes, and activity levels</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">😴</div>
+                <h3>Sleep Monitoring</h3>
+                <p>Log your sleep hours and understand patterns affecting your wellness</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🍎</div>
+                <h3>Calorie Tracking</h3>
+                <p>Keep track of your nutrition and maintain your caloric goals</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Analytics Dashboard</h3>
+                <p>Visualize your progress with beautiful charts and insights</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📁</div>
+                <h3>Data Import</h3>
+                <p>Import data from CSV, TCX, and other fitness tracking formats</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Goal Setting</h3>
+                <p>Set and track your wellness goals with predicted achievement dates</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💡</div>
+                <h3>Insights</h3>
+                <p>Get personalized insights and recommendations based on your data</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔮</div>
+                <h3>What-If Analysis</h3>
+                <p>Predict future outcomes based on different scenarios and behaviors</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section - UPDATED -->
+    <section class="cta-section">
+        <h2>Ready to Start Your Journey?</h2>
+        <p>Join thousands of users tracking their wellness and achieving their goals</p>
+        <div class="hero-buttons">
+            <a href="signup.html" class="btn btn-primary">Get Started Free</a>
+            <a href="login.html" class="btn btn-secondary">Login</a>
+        </div>
+    </section>
+
+    <script>
+        // Check if user is already logged in
+        fetch('/api/auth/check')
+            .then(res => res.json())
+            .then(data => {
+                if (data.authenticated) {
+                    // User is logged in, update buttons
+                    const heroButtons = document.querySelectorAll('.hero-buttons');
+                    heroButtons.forEach(buttonContainer => {
+                        buttonContainer.innerHTML = `
+                        <a href="dashboard.html" class="btn btn-primary">Go to Dashboard</a>
+                        <a href="#" onclick="logout(event)" class="btn btn-secondary">Logout</a>
+                    `;
+                    });
+                }
+            })
+            .catch(err => console.log('Not logged in'));
+
+        function logout(e) {
+            e.preventDefault();
+            fetch('/api/auth/logout', { method: 'POST' })
+                .then(() => window.location.reload())
+                .catch(err => console.error('Logout error:', err));
+        }
+    </script>
+</body>
+
+</html>

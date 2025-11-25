@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Health Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">🏋️ Health Tracker</div>
+        <div class="nav-links">
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="data.html">My Data</a>
+            <a href="import-data.html">Import</a>
+            <a href="#" id="logout-btn">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="dashboard-header">
+            <h1>Welcome back, <span id="username">...</span>! 👋</h1>
+            <p class="page-description">Here's your weight loss progress</p>
+        </div>
+
+        <!-- Progress Overview -->
+        <div class="stats-grid">
+            <div class="stat-card primary">
+                <div class="stat-icon">⚖️</div>
+                <div class="stat-content">
+                    <div class="stat-label">Current Weight</div>
+                    <div class="stat-value" id="current-weight">--</div>
+                    <div class="stat-change" id="weight-change">--</div>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🎯</div>
+                <div class="stat-content">
+                    <div class="stat-label">Goal Weight</div>
+                    <div class="stat-value" id="goal-weight">--</div>
+                    <div class="stat-subtitle" id="weight-to-go">-- to go</div>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">📉</div>
+                <div class="stat-content">
+                    <div class="stat-label">Total Lost</div>
+                    <div class="stat-value" id="weight-lost">--</div>
+                    <div class="stat-subtitle" id="progress-percent">--% progress</div>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">📅</div>
+                <div class="stat-content">
+                    <div class="stat-label">Estimated Goal Date</div>
+                    <div class="stat-value" id="goal-date">--</div>
+                    <div class="stat-subtitle" id="weeks-to-goal">-- weeks</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Weight Chart -->
+        <div class="chart-card">
+            <h2>Weight Progress</h2>
+            <canvas id="weightChart"></canvas>
+        </div>
+
+        <!-- Current Averages -->
+        <div class="section-grid">
+            <div class="info-card">
+                <h3>📊 Last 30 Days Average</h3>
+                <div class="info-list">
+                    <div class="info-item">
+                        <span class="info-label">Calories:</span>
+                        <span class="info-value" id="avg-calories">--</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Sleep:</span>
+                        <span class="info-value" id="avg-sleep">--</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Exercise:</span>
+                        <span class="info-value" id="avg-exercise">--</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Daily Deficit:</span>
+                        <span class="info-value" id="avg-deficit">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3>🎯 Your Numbers</h3>
+                <div class="info-list">
+                    <div class="info-item">
+                        <span class="info-label">TDEE:</span>
+                        <span class="info-value" id="tdee">--</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Height:</span>
+                        <span class="info-value" id="height">--</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Age:</span>
+                        <span class="info-value" id="age">--</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Gender:</span>
+                        <span class="info-value" id="gender">--</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Quality -->
+        <div class="data-quality-card">
+            <h3>📈 Data Quality</h3>
+            <div id="data-quality">Loading...</div>
+        </div>
+
+        <div class="action-buttons">
+            <a href="data.html" class="btn-primary">View All Data</a>
+            <a href="import-data.html" class="btn-secondary">Import More Data</a>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>
